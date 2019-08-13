@@ -9,13 +9,13 @@ def print_colors():
        - otherwise print the color in lower case."""
 
     while True:
-        color = input("enter one of 3 prime colors \n:")
-        color.lower()
+        color = input("enter one of 3 prime colors \n: ")
+        color = color.lower()
         if color in VALID_COLORS or color is "quit":
             print("bye")
             break
         else:
-            print(color.lower())
+            print(f"{color} Not a valid color")
             continue
         pass
 
