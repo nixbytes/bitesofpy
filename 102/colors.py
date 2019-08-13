@@ -11,9 +11,11 @@ def print_colors():
     while True:
         color = input("enter one of 3 prime colors \n:")
         color.lower()
-        if color in VALID_COLORS:
+        if color in VALID_COLORS or color is "quit":
+            print("bye")
             break
         else:
+            print(color.lower())
             continue
         pass
 
