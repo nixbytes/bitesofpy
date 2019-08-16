@@ -23,4 +23,19 @@ def slice_and_dice(text=text):
        if so split the line into words and append the last word to
        the results list. Make sure that you strip off any trailing
        exclamation marks (!) and dots (.), Return the results list."""
+
     results = []
+
+    strip_text = text.strip('\n')
+    final_text = strip_text.split('\n')
+
+    for x in final_text:
+        y = x.strip(" ")
+
+        if x[0].islower():
+            y = x.split(" ")
+            results.append(y[-1])
+
+    return results
+
+slice_and_dice()
