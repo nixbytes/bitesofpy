@@ -26,16 +26,23 @@ def slice_and_dice(text=text):
 
     results = []
 
-    strip_text = text.strip('\n')
-    final_text = strip_text.split('\n')
+    strip_text = text.strip("\n")
+
+    final_text = strip_text.split("\n")
 
     for x in final_text:
-        y = x.strip(" ")
+
+        x = x.strip(" ")
 
         if x[0].islower():
-            y = x.split(" ")
-            results.append(y[-1])
+
+            y = x.strip("!.")
+
+            final_split = y.split(" ")
+
+            results.append(final_split[-1])
 
     return results
+
 
 slice_and_dice()
