@@ -38,4 +38,13 @@ def strip_vowels(text: str) -> (str, int):
        The str/int types in the function defintion above are part
        of Python's new type hinting:
        https://docs.python.org/3/library/typing.html"""
-    pass
+    count = 0
+    for x in vowels:
+
+         text = text.replace(x,"*",9999)
+         text = text.replace(x.upper(),"*",9999)
+         count+=1
+    return (str(text),count)
+
+print(strip_vowels(text))
+
