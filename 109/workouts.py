@@ -19,4 +19,15 @@ def get_workout_motd(day):
 
        Trivia: /etc/motd is a file on Unix-like systems that contains
        a 'message of the day'"""
-    pass
+    try:
+        if rest in workout_schedule[day]:
+            return chill
+        elif 'Rest' not in workout_schedule[day]:
+            return go_train.replace({},workout_schedule[day])
+
+    except KeyError as e:
+        return e
+
+day = input("passed in day argument (monday or MONDAY -> Monday): ")
+
+get_workout_motd(day)
