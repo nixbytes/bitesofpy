@@ -1,19 +1,33 @@
-NAMES = ['arnold schwarzenegger', 'alec baldwin', 'bob belderbos',
-         'julian sequeira', 'sandra bullock', 'keanu reeves',
-         'julbob pybites', 'bob belderbos', 'julian sequeira',
-         'al pacino', 'brad pitt', 'matt damon', 'brad pitt']
+NAMES = [
+    "arnold schwarzenegger",
+    "alec baldwin",
+    "bob belderbos",
+    "julian sequeira",
+    "sandra bullock",
+    "keanu reeves",
+    "julbob pybites",
+    "bob belderbos",
+    "julian sequeira",
+    "al pacino",
+    "brad pitt",
+    "matt damon",
+    "brad pitt",
+]
 
 
 def dedup_and_title_case_names(names):
     """Should return a list of names, each name appears only once"""
-    return list(set(names))
+    names = [name.title() for name in names]
+    names = list(set(names))
+    return names
 
 
 def sort_by_surname_desc(names):
     """Returns names list sorted desc by surname"""
     names = dedup_and_title_case_names(names)
     # ...
-    names.sort(key=lambda x:x.split()[-1])
+    # names = [name.title() for name in names ]
+    names = names.sort(key=lambda x: x.split()[-1])
     return names
 
 
@@ -23,8 +37,9 @@ def shortest_first_name(names):
     """
     names = dedup_and_title_case_names(names)
     # ...
-    names.sort(key=lambda x:x.split()[0])
+    names = names.sort(key=lambda x: x.split()[0])
     return names
+
 
 print(dedup_and_title_case_names(NAMES))
 print(sort_by_surname_desc(NAMES))
