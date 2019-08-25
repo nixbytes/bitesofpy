@@ -10,4 +10,12 @@ def enumerate_names_countries():
        4. Dante      Argentina
        5. Martin     USA
        6. Rodolfo    Mexico"""
-    pass
+    names_countries = dict(zip(names, countries))
+
+    count = 1
+
+    for key, value in names_countries.items():
+        print(f"{count}. {key}\t{value}")
+        count += 1
+
+enumerate_names_countries()
