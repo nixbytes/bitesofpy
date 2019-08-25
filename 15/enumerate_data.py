@@ -15,7 +15,7 @@ def enumerate_names_countries():
     count = 1
 
     for key, value in names_countries.items():
-        print(f"{count}. {key:<10}      {value}")
+        print(f"{count}. {key:<10} {value}".strip())
         count += 1
 
 
