@@ -1,5 +1,5 @@
-names = 'Julian Bob PyBites Dante Martin Rodolfo'.split()
-countries = 'Australia Spain Global Argentina USA Mexico'.split()
+names = "Julian Bob PyBites Dante Martin Rodolfo".split()
+countries = "Australia Spain Global Argentina USA Mexico".split()
 
 
 def enumerate_names_countries():
@@ -17,5 +17,6 @@ def enumerate_names_countries():
     for key, value in names_countries.items():
         print(f"{count}. {key:<10}      {value}")
         count += 1
+
 
 enumerate_names_countries()
