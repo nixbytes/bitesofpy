@@ -1,12 +1,16 @@
+import string
+
 def get_index_different_char(chars):
 
-    list_char = list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
-    chars = "".join(str(e) for e in chars)
+    list_char = list(string.ascii_letters + string.digits)
 
     char_index = [chars.index(i) for i in chars if i not in list_char]
-    return char_index.pop(0)
+
+    num_index = [chars.index(i) for i in chars if i in list_char]
+
+    return int(char_index[0]) if len(char_index) == 1 else int(num_index[0])
 
 
-items = ["A", "f", ".", "Q", 2]
+items = ['.', '{', ' ^', '%', 'a']
 
 print(get_index_different_char(items))
