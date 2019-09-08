@@ -11,17 +11,22 @@ xmlstring = '''<?xml version="1.0" encoding="UTF-8"?>
 </root>'''  # noqa E501
 
 
-def get_tree():
+def get_tree(x=xmlstring):
     """You probably want to use ET.fromstring"""
-    pass
+    text = ET.ElementTree(ET.fromstring(xmlstring))
+    return text
 
 
 def get_movies():
     """Call get_tree and retrieve all movie titles, return a list or generator"""
-    pass
+    root = get_tree()
+    
+    return root.iter(tag='title')
 
 
 def get_movie_longest_runtime():
     """Call get_tree again and return the movie with the longest runtime in minutes,
        for latter consider adding a _get_runtime helper"""
     pass
+
+print(get_movies())
