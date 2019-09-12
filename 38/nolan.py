@@ -20,13 +20,17 @@ def get_tree(x=xmlstring):
 def get_movies():
     """Call get_tree and retrieve all movie titles, return a list or generator"""
     root = get_tree()
-    
-    return root.iter(tag='title')
-
+    movies = [(yield movie.attrib['title']) for movie in root.iter(tag='movie')]
+    return movies
+def _get_runtime(movie):
+    return int(movie.attrib['runtime'].rstrip(' min'))
 
 def get_movie_longest_runtime():
     """Call get_tree again and return the movie with the longest runtime in minutes,
        for latter consider adding a _get_runtime helper"""
-    pass
-
-print(get_movies())
+    root = get_tree()
+    movies = [(movie.attrib['title'], _get_runtime(movie))
+              for movie in root.iter(tag='movie')]
+    max_movie, max_runtime = max(movies, key=lambda m: m[1])
+    return max_movie
+print(get_movie_longest_runtime())
