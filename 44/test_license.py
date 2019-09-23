@@ -2,9 +2,9 @@ import re
 
 from license import gen_key
 
-default_key = re.compile(r'^([A-Z0-9]{8}-){3}[A-Z0-9]{8}$')
-shorter_key = re.compile(r'^([A-Z0-9]{4}-){2}[A-Z0-9]{4}$')
-longer_key = re.compile(r'^([A-Z0-9]{10}-){9}[A-Z0-9]{10}$')
+default_key = re.compile(r"^([A-Z0-9]{8}-){3}[A-Z0-9]{8}$")
+shorter_key = re.compile(r"^([A-Z0-9]{4}-){2}[A-Z0-9]{4}$")
+longer_key = re.compile(r"^([A-Z0-9]{10}-){9}[A-Z0-9]{10}$")
 
 
 def test_gen_default_key():
